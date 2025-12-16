@@ -99,8 +99,8 @@ bool PalletTracker::run() {
     try {
         while (!target_reached && cv::waitKey(1) != 'q') { // 'q' key for exit
             if (!camera_.getFrames(color_image, depth_image)) {
-                log("Failed to get camera frames.");
-                continue;
+                log("Failed to get camera frames. Exiting run loop.");
+                break; // Exit the loop if getting frames fails
             }
 
             std::vector<Vision::Detection> detections = detector_.detect(color_image);

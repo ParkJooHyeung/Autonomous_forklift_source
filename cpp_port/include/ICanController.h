@@ -7,6 +7,14 @@
 namespace AutonomousForklift {
 namespace Can {
 
+// Represents the physical state of the robot
+struct RobotPose {
+    double x_m = 0.0;       // X position in meters
+    double y_m = 0.0;       // Y position in meters
+    double angle_deg = 0.0; // Angle in degrees
+    double fork_height_cm = 0.0; // Fork height in cm
+};
+
 struct CanMessage {
     uint32_t id;         // CAN message ID
     std::vector<uint8_t> data; // CAN message data
@@ -37,8 +45,12 @@ public:
      * @return True if a message was read, false otherwise.
      */
     virtual bool readMessage(CanMessage& message) = 0;
-
-    // A real implementation might also have a callback mechanism for asynchronous message reception.
+    
+    /**
+     * @brief Gets the current simulated pose of the robot.
+     * @return The current RobotPose.
+     */
+    virtual RobotPose getRobotPose() const = 0;
 };
 
 } // namespace Can

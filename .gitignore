@@ -1,1 +1,16 @@
-venv/vir/
+# Python virtual environment
+venv/
+vir/
+
+# Build artifacts
+cpp_port/build/
+cpp_port/run_*/
+
+# Python cache
+*.cpython-312.pyc
+*.cpython-39.pyc
+__pycache__/
+
+# IDE files
+.idea/
+*.iml

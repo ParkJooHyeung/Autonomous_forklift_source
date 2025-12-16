@@ -91,8 +91,8 @@ bool PalletForker::run() {
             current_time_sec = std::chrono::duration<double>(loop_start_time - start_time_).count();
 
             if (!camera_.getFrames(color_image, depth_image)) {
-                log("Failed to get camera frames.");
-                continue;
+                log("Failed to get camera frames. Exiting run loop.");
+                break; // Exit the loop if getting frames fails
             }
 
             std::vector<Vision::Detection> detections = detector_.detect(color_image);

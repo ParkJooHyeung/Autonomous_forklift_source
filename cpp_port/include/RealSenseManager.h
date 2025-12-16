@@ -46,6 +46,7 @@ private:
     int stream_width;
     int stream_height;
     int stream_fps;
+    bool is_streaming_ = false; // Flag to indicate if streaming is active
 
     void setupStreams(int width, int height, int fps);
 };
