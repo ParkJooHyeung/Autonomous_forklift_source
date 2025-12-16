@@ -4,6 +4,9 @@ project(AutonomousForklift CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Add submodule include
+include_directories(lib/json/include)
+
 find_package(Eigen3 CONFIG REQUIRED)
 if (Eigen3_FOUND)
     include_directories(${Eigen3_INCLUDE_DIR})
@@ -39,6 +42,7 @@ include_directories(include)
 # Source files
 set(SOURCES
     src/main.cpp
+    src/BaseController.cpp
     src/calculations.cpp
     src/KalmanFilterWrapper.cpp
     src/RealSenseManager.cpp

@@ -1,0 +1,39 @@
+{
+  "tracker": {
+    "yolo_model_path": "cpp_port/241129_palette.onnx",
+    "camera_width": 1280,
+    "camera_height": 720,
+    "camera_fps": 30,
+    "yolo_conf_threshold": 0.5,
+    "yolo_nms_threshold": 0.4,
+    "kf_r_val": 5.0,
+    "kf_q_var": 0.1,
+    "depth_scale_override": 0.0,
+    "target_depth_min_cm": 190,
+    "target_depth_max_cm": 200,
+    "target_center_tolerance": 5,
+    "window_name": "RealSense YOLOv5 Tracking (C++ Port)",
+    "min_tolerance": 5.0,
+    "max_tolerance": 50.0,
+    "min_depth_cm_for_move": 200.0,
+    "max_depth_cm_for_move": 500.0,
+    "forward_move_target_cm": 245.0,
+    "turn_angle_deg": 5.0
+  },
+  "forker": {
+    "yolo_model_path": "cpp_port/240808_krri.onnx",
+    "camera_width": 1280,
+    "camera_height": 720,
+    "camera_fps": 30,
+    "yolo_conf_threshold": 0.5,
+    "yolo_nms_threshold": 0.4,
+    "focal_length_mm": 1.88,
+    "sensor_height_mm": 2.74,
+    "pick_palette_idx": 5,
+    "go_forward_cm": 80,
+    "go_backward_cm": 80,
+    "slight_fork_up_cm": 10,
+    "window_name": "RealSense YOLOv5 Forking (C++ Port)",
+    "align_wait_sec": 15.0
+  }
+}
